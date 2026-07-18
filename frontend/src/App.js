@@ -7,6 +7,8 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/admin/Employees';
+import TaskBoard from './pages/admin/TaskBoard';
+
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
             <Route element={<DashboardLayout />}>
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/employees" element={<Employees />} />
+              <Route path='/dashboard/taskboard' element={<TaskBoard />} />
   
             </Route>
           </Route>
