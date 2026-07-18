@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 import logo from '../assets/logo.png';
 import { 
   LayoutDashboard, Shield, Code, Palette, Megaphone, 
-  Settings, Users, FolderKanban, Terminal, LogOut 
+  Settings, Users, FolderKanban, Terminal, LogOut ,FileText
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -23,7 +23,8 @@ const Sidebar = () => {
     else if (user?.role === 'admin') {
       menu.push(
         { label: 'Control Panel', icon: <Shield size={18} />, path: '/admin/control', },
-        { label: 'Employees', icon: <Users size={18} />, path: '/dashboard/employees', }
+        { label: 'Employees', icon: <Users size={18} />, path: '/dashboard/employees', },
+        { label: 'Task', icon: <FileText size={18} />, path: '/dashboard/taskboard', }
       );
     } 
     else if (user?.role === 'developer') {

@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
           setUser(userData);
           resolve(userData); 
         } else {
-          reject(new Error("Invalid email or password. (Hint: Use password123)"));
+          reject(new Error("Invalid email or password."));
         }
       }, 600);
     });
@@ -38,8 +38,17 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  // Helper function to return all users registered in the system/DB
+  const getAvailableUsers = () => {
+    return Object.keys(MOCK_DB).map(email => ({
+      email: email,
+      name: MOCK_DB[email].name,
+      role: MOCK_DB[email].role
+    }));
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, getAvailableUsers }}>
       {children}
     </AuthContext.Provider>
   );
