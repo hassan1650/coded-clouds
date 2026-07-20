@@ -24,13 +24,13 @@ const Sidebar = () => {
       menu.push(
         { label: 'Control Panel', icon: <Shield size={18} />, path: '/admin/control', },
         { label: 'Employees', icon: <Users size={18} />, path: '/dashboard/employees', },
-        { label: 'Task', icon: <FileText size={18} />, path: '/dashboard/taskboard', }
+        { label: 'Task', icon: <FileText size={18} />, path: '/dashboard/taskboard', },
+        { label: 'Leave', icon: <FileText size={18} />, path: '/dashboard/leave', }
       );
     } 
     else if (user?.role === 'developer') {
       menu.push(
-        { label: 'Dev Server Console', icon: <Terminal size={18} />, path: '#', badge: 'Live' },
-        { label: 'Repositories', icon: <Code size={18} />, path: '#', badge: null }
+        { label: 'Leave', icon: <FileText size={18} />, path: '/dashboard/leave', }
       );
     } 
     else if (user?.role === 'designer') {
