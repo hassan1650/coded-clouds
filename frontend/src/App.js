@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Employees from './pages/admin/Employees';
 import TaskBoard from './pages/admin/TaskBoard';
+import LeaveManagement from './pages/developer/LeaveManagement';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/employees" element={<Employees />} />
               <Route path='/dashboard/taskboard' element={<TaskBoard />} />
+              <Route path='/dashboard/leave' element={<LeaveManagement />} />
   
             </Route>
           </Route>
